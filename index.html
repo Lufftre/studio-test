@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORKDROP: Wine Crates</title>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="dot"></span>CORK<b>DROP</b></a>
+    <nav>
+      <a href="#crates">Crates</a>
+      <a href="#open">Open</a>
+      <a href="#inventory">Cellar</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="mute" title="Sound">🔊</button>
+    <div class="wallet"><small>Balance</small><span id="bal">€0</span><button class="btn-add" id="addFunds">+ €100</button></div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap">
+    <div class="live">LIVE DROPS</div>
+    <div class="feed" id="feed"></div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">🍷 Real bottles · Delivered IRL</span>
+      <h1>Loot crates,<br>but they're <em>full of wine</em>.<br><span class="shine">Unbox a Grand Cru.</span></h1>
+      <p class="lede">Pick a crate, spin the reel and see what you pulled. Everything you win ships to your door in an actual wooden crate. Or sell it back and spin again.</p>
+      <div class="cta-row">
+        <a class="btn" href="#crates">Browse crates</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+      <div class="stats">
+        <div><b id="statBottles">48,213</b>bottles dropped</div>
+        <div><b id="statLegend">37</b>legendaries today</div>
+        <div><b>€14,500</b>top pull</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="glow"></div>
+      <div class="crate" id="heroCrate" style="--w: 340px"></div>
+    </div>
+  </div>
+</section>
+
+<section id="crates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Pick your crate</h2>
+        <p class="sub">Each crate holds 7 rarity tiers. Odds are printed on the box.</p>
+      </div>
+    </div>
+    <div class="crates" id="crateGrid"></div>
+  </div>
+</section>
+
+<section class="opener" id="open">
+  <div class="wrap">
+    <div class="opener-head">
+      <div class="crate" id="openCrate"></div>
+      <div>
+        <h2 id="openName">Crate</h2>
+        <p class="sub" id="openDesc"></p>
+      </div>
+    </div>
+
+    <div class="reel-wrap">
+      <div class="marker"></div>
+      <div class="reel" id="reel"><div class="strip" id="strip"></div></div>
+    </div>
+
+    <div class="open-row">
+      <button class="btn" id="openBtn">Open crate</button>
+      <label class="check"><input type="checkbox" id="fast"> Quick open</label>
+    </div>
+
+    <div class="contents-head">
+      <h3>What's inside</h3>
+      <div class="odds" id="odds"></div>
+    </div>
+    <div class="contents" id="contents"></div>
+  </div>
+</section>
+
+<section id="inventory">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Your cellar</h2>
+        <p class="sub" id="invSub">Bottles you've pulled. Ship them home or sell them back for 85% of value.</p>
+      </div>
+    </div>
+    <div id="inv"></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>How it works</h2></div></div>
+    <div class="steps">
+      <div class="step"><div class="num">i.</div><h3>Pick a crate</h3><p>From €15 Tuesday-night reds to a €129 Burgundy heist. Every crate lists its full contents and the exact odds of each tier.</p></div>
+      <div class="step"><div class="num">ii.</div><h3>Spin the reel</h3><p>The reel stops on your bottle. Most spins land a solid everyday wine. About 1 in 500 lands a legendary.</p></div>
+      <div class="step"><div class="num">iii.</div><h3>Ship it or flip it</h3><p>Ship real bottles to your door in a branded wooden crate, or sell them back instantly for credit and keep spinning.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="demo-badge">DEMO ONLY.</span> No real money, wine or shipping. Balance is fake and resets on reload.</div>
+    <div>Drink responsibly. 18+ / 20+ where applicable. © 2026 CORKDROP (fictional)</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<div class="confetti" id="confetti"></div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
